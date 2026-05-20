@@ -1,6 +1,6 @@
-import { Instagram, MessageCircle, Phone, MapPin } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Mail } from "lucide-react";
 import logo from "@/assets/almonzo-logo.jpg";
-import { WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2 } from "@/lib/data";
+import { WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -41,6 +41,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-[oklch(0.85_0.02_70)]">
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {PHONE_1}</li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {PHONE_2}</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> {EMAIL}</li>
             <li className="flex items-start gap-2"><MapPin className="h-4 w-4 text-accent mt-0.5" /> Jagatpura, Raipur, Rajasthan</li>
           </ul>
           <div className="flex gap-3 mt-5">
