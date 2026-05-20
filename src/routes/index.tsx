@@ -452,7 +452,7 @@ function Contact() {
           {[
             { icon: Phone, label: "Call us", lines: [PHONE_1, PHONE_2], href: `tel:${PHONE_1.replace(/\s/g, "")}` },
             { icon: MapPin, label: "Visit us", lines: ["Jagatpura, Raipur", "Rajasthan, India"], href: MAPS_URL },
-            { icon: Mail, label: "Connect", lines: ["WhatsApp & Instagram", "Always within 24 hrs"], href: `https://wa.me/${WHATSAPP}` },
+            { icon: Mail, label: "Email us", lines: [EMAIL, "Replies within 24 hrs"], href: `mailto:${EMAIL}` },
           ].map((c, i) => (
             <motion.a key={c.label} {...fadeUp(i * 0.08)} href={c.href} target="_blank" rel="noreferrer" className="block">
               <Card className="glass rounded-2xl p-6 hover:shadow-gold transition-all hover:-translate-y-1 h-full">
