@@ -7,7 +7,6 @@ import desertImg from "@/assets/desert-camp.jpg";
 import luxHotel from "@/assets/luxury-hotel.jpg";
 import budgetHotel from "@/assets/budget-hotel.jpg";
 import heritage from "@/assets/heritage-stay.jpg";
-import suv from "@/assets/cab-suv.jpg";
 import sedan from "@/assets/cab-sedan.jpg";
 import tempo from "@/assets/cab-tempo.jpg";
 import luxuryCar from "@/assets/cab-luxury.jpg";
@@ -15,6 +14,7 @@ import luxuryCar from "@/assets/cab-luxury.jpg";
 export const WHATSAPP = "919352914840";
 export const PHONE_1 = "+91 93529 14840";
 export const PHONE_2 = "+91 89554 70097";
+export const EMAIL = "almonzotourism@gmail.com";
 export const INSTAGRAM = "https://instagram.com/almonzo_tourism";
 export const MAPS_URL = "https://maps.app.goo.gl/SeHCRM8k49NqmwVw9?g_st=ic";
 
@@ -157,7 +157,6 @@ export const hotels = [
 ];
 
 export const cabs = [
-  { id: "suv", name: "SUV", desc: "Toyota Fortuner / Innova Crysta", image: suv, capacity: "6 + 1", price: "₹18 / km", features: ["AC", "Bluetooth", "Spacious luggage"] },
   { id: "sedan", name: "Sedan", desc: "Toyota Etios / Honda City", image: sedan, capacity: "4 + 1", price: "₹12 / km", features: ["AC", "Premium interior", "Fuel efficient"] },
   { id: "tempo", name: "Tempo Traveller", desc: "12–17 seater for groups", image: tempo, capacity: "12 / 17", price: "₹28 / km", features: ["Reclining seats", "Push back", "Ample boot"] },
   { id: "luxury", name: "Luxury Cars", desc: "Mercedes / BMW with chauffeur", image: luxuryCar, capacity: "3 + 1", price: "₹55 / km", features: ["Chauffeur", "Mineral water", "Wi-Fi"] },
