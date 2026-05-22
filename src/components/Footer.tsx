@@ -48,7 +48,7 @@ export function Footer() {
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[oklch(0.55_0.18_150)] text-white text-sm font-medium hover:scale-105 transition-transform shadow-lg">
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
-            <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[oklch(0.6_0.25_330)] to-[oklch(0.65_0.22_30)] text-white text-sm font-medium hover:scale-105 transition-transform shadow-lg">
+            <a href="https://www.instagram.com/almonzotourism?igsh=OXU2MThhNjV0a2hw" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[oklch(0.6_0.25_330)] to-[oklch(0.65_0.22_30)] text-white text-sm font-medium hover:scale-105 transition-transform shadow-lg">
               <Instagram className="h-4 w-4" /> Instagram
             </a>
           </div>
