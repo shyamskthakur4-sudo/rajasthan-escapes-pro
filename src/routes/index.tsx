@@ -451,7 +451,7 @@ function Contact() {
         <div className="grid lg:grid-cols-3 gap-6 mb-10">
           {[
             { icon: Phone, label: "Call us", lines: [PHONE_1, PHONE_2], href: `tel:${PHONE_1.replace(/\s/g, "")}` },
-            { icon: MapPin, label: "Visit us", lines: ["Jagatpura, Raipur", "Rajasthan, India"], href: MAPS_URL },
+            { icon: MapPin, label: "Visit us", lines: ["Jagatpura, Jaipur", "Rajasthan, India"], href: MAPS_URL },
             { icon: Mail, label: "Email us", lines: [EMAIL, "Replies within 24 hrs"], href: `mailto:${EMAIL}` },
           ].map((c, i) => (
             <motion.a key={c.label} {...fadeUp(i * 0.08)} href={c.href} target="_blank" rel="noreferrer" className="block">
