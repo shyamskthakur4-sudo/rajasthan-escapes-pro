@@ -24,11 +24,36 @@ import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, M
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Almonzo Tourism — Luxury Rajasthan Travel, Tours & Heritage Stays" },
+      { title: "Almonzo Tourism — Luxury Rajasthan Tours & Stays" },
       { name: "description", content: "Premium Rajasthan tour packages, palace hotels, desert camps, luxury cabs and spiritual tours by Almonzo Tourism — Jagatpura, Rajasthan." },
       { property: "og:title", content: "Almonzo Tourism — Royal Rajasthan Journeys" },
       { property: "og:description", content: "Tailored luxury travel across Jaipur, Udaipur, Jodhpur, Jaisalmer & the Golden Triangle." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://rajasthan-escapes-pro.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://rajasthan-escapes-pro.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "Almonzo Tourism",
+          url: "https://rajasthan-escapes-pro.lovable.app/",
+          email: "almonzotourism@gmail.com",
+          telephone: ["+91-93529-14840", "+91-89554-70097"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Jagatpura",
+            addressLocality: "Jaipur",
+            addressRegion: "Rajasthan",
+            addressCountry: "IN",
+          },
+          areaServed: "Rajasthan, India",
+        }),
+      },
     ],
   }),
   component: Home,
