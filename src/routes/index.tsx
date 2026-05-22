@@ -212,7 +212,7 @@ function Packages() {
                 <p className="text-sm text-muted-foreground">{selected.duration} · {selected.tagline}</p>
               </DialogHeader>
               <img src={selected.image} alt={selected.title} className="w-full h-56 object-cover rounded-xl" />
-              <h4 className="font-display text-xl mt-2">Day-by-day itinerary</h4>
+              <h3 className="font-display text-xl mt-2">Day-by-day itinerary</h3>
               <ol className="space-y-3">
                 {selected.days.map((d, idx) => (
                   <li key={idx} className="flex gap-3 text-sm">
