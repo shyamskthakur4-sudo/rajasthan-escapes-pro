@@ -507,11 +507,11 @@ function Contact() {
               <p className="text-sm text-muted-foreground mt-1">Reaches us directly on WhatsApp.</p>
               <form onSubmit={submit} className="mt-6 space-y-4">
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="grid gap-2"><Label>Name</Label><Input required value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} /></div>
-                  <div className="grid gap-2"><Label>Phone</Label><Input required value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} /></div>
+                  <div className="grid gap-2"><Label htmlFor="contact-name">Name</Label><Input id="contact-name" required value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} /></div>
+                  <div className="grid gap-2"><Label htmlFor="contact-phone">Phone</Label><Input id="contact-phone" required value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} /></div>
                 </div>
-                <div className="grid gap-2"><Label>Email</Label><Input type="email" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} /></div>
-                <div className="grid gap-2"><Label>Message</Label><Textarea rows={4} required value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} /></div>
+                <div className="grid gap-2"><Label htmlFor="contact-email">Email</Label><Input id="contact-email" type="email" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} /></div>
+                <div className="grid gap-2"><Label htmlFor="contact-message">Message</Label><Textarea id="contact-message" rows={4} required value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} /></div>
                 <div className="flex gap-3">
                   <Button type="submit" className="flex-1 bg-gradient-royal text-primary-foreground rounded-full h-12">Send via WhatsApp</Button>
                   <a href={INSTAGRAM} target="_blank" rel="noreferrer">
