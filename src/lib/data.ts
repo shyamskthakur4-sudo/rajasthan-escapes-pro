@@ -9,9 +9,9 @@ import budgetHotel from "@/assets/budget-hotel.jpg";
 import heritage from "@/assets/heritage-stay.jpg";
 import sedan from "@/assets/cab-sedan.jpg";
 import tempo from "@/assets/cab-tempo.jpg";
-import luxuryCar from "@/assets/cab-luxury.jpg";
+import innovaCar from "@/assets/cab-luxury.jpg";
 
-export const WHATSAPP = "919352914840";
+export const WHATSAPP = "918955470097";
 export const PHONE_1 = "+91 93529 14840";
 export const PHONE_2 = "+91 89554 70097";
 export const EMAIL = "almonzotourism@gmail.com";
