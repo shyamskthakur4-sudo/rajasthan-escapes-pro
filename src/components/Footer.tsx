@@ -42,7 +42,7 @@ export function Footer() {
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {PHONE_1}</li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> {PHONE_2}</li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> {EMAIL}</li>
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 text-accent mt-0.5" /> Jagatpura, Raipur, Rajasthan</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 text-accent mt-0.5" /> Jagatpura, Jaipur, Rajasthan</li>
           </ul>
           <div className="flex gap-3 mt-5">
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-[oklch(0.55_0.18_150)] text-white text-sm font-medium hover:scale-105 transition-transform shadow-lg">
