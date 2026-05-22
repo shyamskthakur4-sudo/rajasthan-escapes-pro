@@ -24,11 +24,36 @@ import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, M
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Almonzo Tourism — Luxury Rajasthan Travel, Tours & Heritage Stays" },
+      { title: "Almonzo Tourism — Luxury Rajasthan Tours & Stays" },
       { name: "description", content: "Premium Rajasthan tour packages, palace hotels, desert camps, luxury cabs and spiritual tours by Almonzo Tourism — Jagatpura, Rajasthan." },
       { property: "og:title", content: "Almonzo Tourism — Royal Rajasthan Journeys" },
       { property: "og:description", content: "Tailored luxury travel across Jaipur, Udaipur, Jodhpur, Jaisalmer & the Golden Triangle." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://rajasthan-escapes-pro.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://rajasthan-escapes-pro.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "Almonzo Tourism",
+          url: "https://rajasthan-escapes-pro.lovable.app/",
+          email: "almonzotourism@gmail.com",
+          telephone: ["+91-93529-14840", "+91-89554-70097"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Jagatpura",
+            addressLocality: "Jaipur",
+            addressRegion: "Rajasthan",
+            addressCountry: "IN",
+          },
+          areaServed: "Rajasthan, India",
+        }),
+      },
     ],
   }),
   component: Home,
@@ -187,7 +212,7 @@ function Packages() {
                 <p className="text-sm text-muted-foreground">{selected.duration} · {selected.tagline}</p>
               </DialogHeader>
               <img src={selected.image} alt={selected.title} className="w-full h-56 object-cover rounded-xl" />
-              <h4 className="font-display text-xl mt-2">Day-by-day itinerary</h4>
+              <h3 className="font-display text-xl mt-2">Day-by-day itinerary</h3>
               <ol className="space-y-3">
                 {selected.days.map((d, idx) => (
                   <li key={idx} className="flex gap-3 text-sm">
@@ -482,11 +507,11 @@ function Contact() {
               <p className="text-sm text-muted-foreground mt-1">Reaches us directly on WhatsApp.</p>
               <form onSubmit={submit} className="mt-6 space-y-4">
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="grid gap-2"><Label>Name</Label><Input required value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} /></div>
-                  <div className="grid gap-2"><Label>Phone</Label><Input required value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} /></div>
+                  <div className="grid gap-2"><Label htmlFor="contact-name">Name</Label><Input id="contact-name" required value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} /></div>
+                  <div className="grid gap-2"><Label htmlFor="contact-phone">Phone</Label><Input id="contact-phone" required value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} /></div>
                 </div>
-                <div className="grid gap-2"><Label>Email</Label><Input type="email" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} /></div>
-                <div className="grid gap-2"><Label>Message</Label><Textarea rows={4} required value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} /></div>
+                <div className="grid gap-2"><Label htmlFor="contact-email">Email</Label><Input id="contact-email" type="email" value={f.email} onChange={(e) => setF({ ...f, email: e.target.value })} /></div>
+                <div className="grid gap-2"><Label htmlFor="contact-message">Message</Label><Textarea id="contact-message" rows={4} required value={f.message} onChange={(e) => setF({ ...f, message: e.target.value })} /></div>
                 <div className="flex gap-3">
                   <Button type="submit" className="flex-1 bg-gradient-royal text-primary-foreground rounded-full h-12">Send via WhatsApp</Button>
                   <a href={INSTAGRAM} target="_blank" rel="noreferrer">
