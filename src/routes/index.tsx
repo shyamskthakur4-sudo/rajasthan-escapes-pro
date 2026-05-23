@@ -428,44 +428,127 @@ function Cabs() {
 /* ---------------- ABOUT ---------------- */
 function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-gradient-to-b from-secondary/40 to-background">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20">
+      {/* Decorative background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-accent/15 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Visual */}
           <motion.div {...fadeUp()}>
             <div className="relative">
-              <img src={hero} alt="Rajasthan heritage" className="w-full rounded-3xl shadow-luxury" loading="lazy" />
-              <div className="absolute -bottom-8 -right-4 md:-right-8 glass rounded-2xl p-5 shadow-luxury w-56">
+              <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-2xl rounded-[2rem]" />
+              <div className="relative overflow-hidden rounded-[2rem] shadow-luxury">
+                <img
+                  src={hero}
+                  alt="Almonzo Tourism — luxury travel across India"
+                  className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-[1500ms]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="absolute -top-6 -right-4 md:-right-8 glass rounded-2xl p-4 shadow-luxury w-52"
+              >
                 <div className="flex items-center gap-2 text-accent">
                   <Award className="h-5 w-5" />
-                  <div className="text-xs uppercase tracking-widest">Since 2015</div>
+                  <div className="text-[10px] uppercase tracking-[0.25em]">Since Dec 2022</div>
                 </div>
-                <div className="font-display text-lg mt-1">A decade of royal hospitality</div>
-              </div>
+                <div className="font-display text-base mt-1">Trusted travel concierge</div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute -bottom-6 -left-4 md:-left-8 glass rounded-2xl p-4 shadow-luxury w-52"
+              >
+                <div className="flex items-center gap-2 text-accent">
+                  <Heart className="h-5 w-5 fill-accent" />
+                  <div className="text-[10px] uppercase tracking-[0.25em]">Loved by 200+</div>
+                </div>
+                <div className="font-display text-base mt-1">Happy travellers</div>
+              </motion.div>
             </div>
           </motion.div>
+
+          {/* Content */}
           <motion.div {...fadeUp(0.1)}>
-            <div className="text-xs uppercase tracking-[0.4em] text-accent mb-3">About Us</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight">Rajasthan, the way it was always meant to be experienced.</h2>
+            <div className="text-xs uppercase tracking-[0.4em] text-accent mb-3 flex items-center gap-3">
+              <span className="h-px w-10 bg-accent/50" /> About Us
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+              Crafting memorable <span className="text-gradient-gold">journeys</span> across India
+            </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">ALMONZO TOURISM</span> is a Rajasthan-based travel agency providing premium travel experiences across the land of kings. We specialise in tour packages, hotel bookings, cab services, spiritual tours and customised luxury travel planning.
+              <span className="font-semibold text-foreground">ALMONZO TOURISM</span> has been providing memorable travel experiences since <span className="font-semibold text-foreground">December 2022</span>. With 4+ years of tourism experience, we offer customized tour packages across Rajasthan, Uttarakhand, Kashmir, and Andaman & Nicobar.
             </p>
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {[{ icon: Users, t: "Local team" }, { icon: Globe2, t: "Global guests" }, { icon: Award, t: "Award winning" }].map((b) => (
-                <div key={b.t} className="rounded-2xl border border-border bg-card p-4 text-center">
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+              We provide hotel bookings, cab services, sightseeing tours, spiritual tours, and personalized travel planning with premium customer support.
+            </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-3 md:gap-4">
+              {[
+                { icon: Users, t: "Personal team" },
+                { icon: Globe2, t: "Pan-India tours" },
+                { icon: Award, t: "Premium support" },
+              ].map((b) => (
+                <div
+                  key={b.t}
+                  className="rounded-2xl border border-border/70 bg-card/60 backdrop-blur p-4 text-center hover:border-accent/50 hover:-translate-y-0.5 transition-all"
+                >
                   <b.icon className="h-6 w-6 mx-auto text-accent" />
                   <div className="text-xs mt-2 text-muted-foreground">{b.t}</div>
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <ClientDetailsDialog
+                subject="Plan My Trip"
+                trigger={
+                  <Button size="lg" className="bg-gradient-royal text-primary-foreground rounded-full shadow-gold">
+                    Start Planning <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                }
+              />
+              <Button asChild size="lg" variant="outline" className="rounded-full">
+                <a href="#contact">Talk to us</a>
+              </Button>
+            </div>
           </motion.div>
         </div>
 
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-border">
-          <Counter to={2500} suffix="+" label="Happy travellers" />
-          <Counter to={48} label="Destinations" />
-          <Counter to={120} suffix="+" label="Curated stays" />
-          <Counter to={10} suffix=" yrs" label="Of expertise" />
-        </div>
+        {/* Animated counters */}
+        <motion.div
+          {...fadeUp(0.2)}
+          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {[
+            { to: 200, suffix: "+", label: "Happy Customers", icon: Heart },
+            { to: 4, suffix: "+", label: "Years Experience", icon: Award },
+            { to: 24, suffix: "/7", label: "Premium Support", icon: Headphones },
+          ].map((s) => (
+            <div
+              key={s.label}
+              className="relative overflow-hidden rounded-3xl glass p-8 shadow-luxury hover:-translate-y-1 transition-transform"
+            >
+              <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-gradient-gold opacity-10 blur-2xl" />
+              <s.icon className="h-7 w-7 text-accent mb-3" />
+              <Counter to={s.to} suffix={s.suffix} label={s.label} />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
