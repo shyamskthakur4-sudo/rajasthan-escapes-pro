@@ -284,6 +284,6 @@ export const hotels = [
 
 export const cabs = [
   { id: "sedan", name: "Sedan", desc: "Toyota Etios / Swift Dzire", image: sedan, capacity: "3 + 1", price: "₹12 / km", features: ["AC", "Premium interior", "Fuel efficient"] },
-  { id: "innova", name: "Innova / Innova Crysta", desc: "Toyota Innova & Innova Crysta", image: innovaCar, capacity: "5 + 1", price: "₹22 / km", features: ["Spacious cabin", "Captain seats", "Ample luggage"] },
+  { id: "innova", name: "Innova / Innova Crysta", desc: "Toyota Innova & Innova Crysta", image: innovaCar, capacity: "5 + 1", price: "₹20 / km", features: ["Spacious cabin", "Captain seats", "Ample luggage"] },
   { id: "tempo", name: "Tempo Traveller", desc: "12–17 seater for groups", image: tempo, capacity: "12 / 17", price: "₹28 / km", features: ["Reclining seats", "Push back", "Ample boot"] },
 ];
