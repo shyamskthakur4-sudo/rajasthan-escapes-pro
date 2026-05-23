@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Star, MapPin, Phone, Mail, MessageCircle, Instagram, Clock, LogIn, LogOut, ChevronRight, Sparkles, Award, Users, Globe2, Download, Calendar } from "lucide-react";
+import { Star, MapPin, Phone, Mail, MessageCircle, Instagram, Clock, LogIn, LogOut, ChevronRight, Sparkles, Award, Users, Globe2, Download, Calendar, Mountain, Palmtree, Snowflake, Crown, Heart, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -85,6 +85,7 @@ function Home() {
     <div id="top" className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Destinations />
       <Marquee />
       <Packages />
       <Hotels />
@@ -131,6 +132,107 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/70 text-xs uppercase tracking-[0.3em] animate-bounce">Scroll</div>
+    </section>
+  );
+}
+
+/* ---------------- DESTINATIONS ---------------- */
+const destinationGroups = [
+  {
+    state: "Rajasthan",
+    tagline: "Land of kings, palaces & desert dunes",
+    icon: Crown,
+    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Jaipur", "Udaipur", "Jaisalmer", "Jodhpur", "Pushkar", "Bikaner"],
+    accent: "from-amber-500/80 to-rose-600/80",
+  },
+  {
+    state: "Uttarakhand",
+    tagline: "Himalayan retreats & sacred valleys",
+    icon: Mountain,
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Nainital", "Mussoorie", "Rishikesh", "Kedarnath"],
+    accent: "from-emerald-500/80 to-teal-700/80",
+  },
+  {
+    state: "Kashmir",
+    tagline: "Paradise of meadows, lakes & snow",
+    icon: Snowflake,
+    image: "https://images.unsplash.com/photo-1566837497312-7be4a47ed340?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Srinagar", "Gulmarg", "Sonmarg", "Pahalgam"],
+    accent: "from-sky-500/80 to-indigo-700/80",
+  },
+  {
+    state: "Andaman & Nicobar",
+    tagline: "Turquoise waters & coral islands",
+    icon: Palmtree,
+    image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Port Blair", "Havelock Island", "Neil Island"],
+    accent: "from-cyan-500/80 to-blue-700/80",
+  },
+];
+
+function Destinations() {
+  return (
+    <section id="destinations" className="py-20 md:py-28 bg-gradient-to-b from-background via-secondary/20 to-background">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading
+          eyebrow="Destinations"
+          title="Explore India, State by State"
+          sub="Handpicked destinations across India — from royal Rajasthan to the Himalayan north and the emerald islands of the Andaman."
+        />
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {destinationGroups.map((g, i) => (
+            <motion.div key={g.state} {...fadeUp(i * 0.08)}>
+              <Card className="group relative overflow-hidden rounded-3xl border-border/60 p-0 h-full hover:shadow-luxury transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={g.image}
+                    alt={`${g.state} destinations`}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]"
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${g.accent} mix-blend-multiply opacity-70 group-hover:opacity-60 transition-opacity`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute top-4 left-4 glass rounded-full h-11 w-11 flex items-center justify-center">
+                    <g.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="font-display text-2xl leading-tight">{g.state}</h3>
+                    <p className="text-xs text-white/85 mt-1">{g.tagline}</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3 flex items-center gap-2">
+                    <MapPin className="h-3 w-3 text-accent" /> Popular cities
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {g.cities.map((c) => (
+                      <span
+                        key={c}
+                        className="text-xs px-3 py-1.5 rounded-full bg-secondary border border-border/70 text-foreground/80 hover:bg-accent/15 hover:border-accent/40 hover:text-foreground transition-colors"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                  <ClientDetailsDialog
+                    subject={`${g.state} Tour Inquiry`}
+                    trigger={
+                      <Button variant="outline" className="mt-5 w-full rounded-full group/btn">
+                        Plan {g.state} trip
+                        <ChevronRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Button>
+                    }
+                  />
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
@@ -326,44 +428,127 @@ function Cabs() {
 /* ---------------- ABOUT ---------------- */
 function About() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-gradient-to-b from-secondary/40 to-background">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="about" className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-secondary/20">
+      {/* Decorative background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-accent/15 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Visual */}
           <motion.div {...fadeUp()}>
             <div className="relative">
-              <img src={hero} alt="Rajasthan heritage" className="w-full rounded-3xl shadow-luxury" loading="lazy" />
-              <div className="absolute -bottom-8 -right-4 md:-right-8 glass rounded-2xl p-5 shadow-luxury w-56">
+              <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-2xl rounded-[2rem]" />
+              <div className="relative overflow-hidden rounded-[2rem] shadow-luxury">
+                <img
+                  src={hero}
+                  alt="Almonzo Tourism — luxury travel across India"
+                  className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-[1500ms]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="absolute -top-6 -right-4 md:-right-8 glass rounded-2xl p-4 shadow-luxury w-52"
+              >
                 <div className="flex items-center gap-2 text-accent">
                   <Award className="h-5 w-5" />
-                  <div className="text-xs uppercase tracking-widest">Since 2015</div>
+                  <div className="text-[10px] uppercase tracking-[0.25em]">Since Dec 2022</div>
                 </div>
-                <div className="font-display text-lg mt-1">A decade of royal hospitality</div>
-              </div>
+                <div className="font-display text-base mt-1">Trusted travel concierge</div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="absolute -bottom-6 -left-4 md:-left-8 glass rounded-2xl p-4 shadow-luxury w-52"
+              >
+                <div className="flex items-center gap-2 text-accent">
+                  <Heart className="h-5 w-5 fill-accent" />
+                  <div className="text-[10px] uppercase tracking-[0.25em]">Loved by 200+</div>
+                </div>
+                <div className="font-display text-base mt-1">Happy travellers</div>
+              </motion.div>
             </div>
           </motion.div>
+
+          {/* Content */}
           <motion.div {...fadeUp(0.1)}>
-            <div className="text-xs uppercase tracking-[0.4em] text-accent mb-3">About Us</div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight">Rajasthan, the way it was always meant to be experienced.</h2>
+            <div className="text-xs uppercase tracking-[0.4em] text-accent mb-3 flex items-center gap-3">
+              <span className="h-px w-10 bg-accent/50" /> About Us
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+              Crafting memorable <span className="text-gradient-gold">journeys</span> across India
+            </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">ALMONZO TOURISM</span> is a Rajasthan-based travel agency providing premium travel experiences across the land of kings. We specialise in tour packages, hotel bookings, cab services, spiritual tours and customised luxury travel planning.
+              <span className="font-semibold text-foreground">ALMONZO TOURISM</span> has been providing memorable travel experiences since <span className="font-semibold text-foreground">December 2022</span>. With 4+ years of tourism experience, we offer customized tour packages across Rajasthan, Uttarakhand, Kashmir, and Andaman & Nicobar.
             </p>
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {[{ icon: Users, t: "Local team" }, { icon: Globe2, t: "Global guests" }, { icon: Award, t: "Award winning" }].map((b) => (
-                <div key={b.t} className="rounded-2xl border border-border bg-card p-4 text-center">
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+              We provide hotel bookings, cab services, sightseeing tours, spiritual tours, and personalized travel planning with premium customer support.
+            </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-3 md:gap-4">
+              {[
+                { icon: Users, t: "Personal team" },
+                { icon: Globe2, t: "Pan-India tours" },
+                { icon: Award, t: "Premium support" },
+              ].map((b) => (
+                <div
+                  key={b.t}
+                  className="rounded-2xl border border-border/70 bg-card/60 backdrop-blur p-4 text-center hover:border-accent/50 hover:-translate-y-0.5 transition-all"
+                >
                   <b.icon className="h-6 w-6 mx-auto text-accent" />
                   <div className="text-xs mt-2 text-muted-foreground">{b.t}</div>
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <ClientDetailsDialog
+                subject="Plan My Trip"
+                trigger={
+                  <Button size="lg" className="bg-gradient-royal text-primary-foreground rounded-full shadow-gold">
+                    Start Planning <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                }
+              />
+              <Button asChild size="lg" variant="outline" className="rounded-full">
+                <a href="#contact">Talk to us</a>
+              </Button>
+            </div>
           </motion.div>
         </div>
 
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y border-border">
-          <Counter to={2500} suffix="+" label="Happy travellers" />
-          <Counter to={48} label="Destinations" />
-          <Counter to={120} suffix="+" label="Curated stays" />
-          <Counter to={10} suffix=" yrs" label="Of expertise" />
-        </div>
+        {/* Animated counters */}
+        <motion.div
+          {...fadeUp(0.2)}
+          className="mt-20 md:mt-28 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {[
+            { to: 200, suffix: "+", label: "Happy Customers", icon: Heart },
+            { to: 4, suffix: "+", label: "Years Experience", icon: Award },
+            { to: 24, suffix: "/7", label: "Premium Support", icon: Headphones },
+          ].map((s) => (
+            <div
+              key={s.label}
+              className="relative overflow-hidden rounded-3xl glass p-8 shadow-luxury hover:-translate-y-1 transition-transform"
+            >
+              <div className="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-gradient-gold opacity-10 blur-2xl" />
+              <s.icon className="h-7 w-7 text-accent mb-3" />
+              <Counter to={s.to} suffix={s.suffix} label={s.label} />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
