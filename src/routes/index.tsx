@@ -85,6 +85,7 @@ function Home() {
     <div id="top" className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
+      <Destinations />
       <Marquee />
       <Packages />
       <Hotels />
