@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Star, MapPin, Phone, Mail, MessageCircle, Instagram, Clock, LogIn, LogOut, ChevronRight, Sparkles, Award, Users, Globe2, Download, Calendar } from "lucide-react";
+import { Star, MapPin, Phone, Mail, MessageCircle, Instagram, Clock, LogIn, LogOut, ChevronRight, Sparkles, Award, Users, Globe2, Download, Calendar, Mountain, Palmtree, Snowflake, Crown, Heart, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
