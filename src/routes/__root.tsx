@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Premium Rajasthan tour packages, palace hotels, desert camps & luxury cab services by Almonzo Tourism." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5Z8NtVmv8tYK2DXf57xiIbYJMoq2/social-images/social-1779167409072-photo_2026-05-19_10-28-33.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5Z8NtVmv8tYK2DXf57xiIbYJMoq2/social-images/social-1779167409072-photo_2026-05-19_10-28-33.webp" },
+      { name: "google-site-verification", content: "Dif6Jd27MEng2bowrQe0qL--dD_LC3SHE98BpqSDEf8" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
