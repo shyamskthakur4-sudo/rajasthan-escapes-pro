@@ -136,6 +136,107 @@ function Hero() {
   );
 }
 
+/* ---------------- DESTINATIONS ---------------- */
+const destinationGroups = [
+  {
+    state: "Rajasthan",
+    tagline: "Land of kings, palaces & desert dunes",
+    icon: Crown,
+    image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Jaipur", "Udaipur", "Jaisalmer", "Jodhpur", "Pushkar", "Bikaner"],
+    accent: "from-amber-500/80 to-rose-600/80",
+  },
+  {
+    state: "Uttarakhand",
+    tagline: "Himalayan retreats & sacred valleys",
+    icon: Mountain,
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Nainital", "Mussoorie", "Rishikesh", "Kedarnath"],
+    accent: "from-emerald-500/80 to-teal-700/80",
+  },
+  {
+    state: "Kashmir",
+    tagline: "Paradise of meadows, lakes & snow",
+    icon: Snowflake,
+    image: "https://images.unsplash.com/photo-1566837497312-7be4a47ed340?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Srinagar", "Gulmarg", "Sonmarg", "Pahalgam"],
+    accent: "from-sky-500/80 to-indigo-700/80",
+  },
+  {
+    state: "Andaman & Nicobar",
+    tagline: "Turquoise waters & coral islands",
+    icon: Palmtree,
+    image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Port Blair", "Havelock Island", "Neil Island"],
+    accent: "from-cyan-500/80 to-blue-700/80",
+  },
+];
+
+function Destinations() {
+  return (
+    <section id="destinations" className="py-20 md:py-28 bg-gradient-to-b from-background via-secondary/20 to-background">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading
+          eyebrow="Destinations"
+          title="Explore India, State by State"
+          sub="Handpicked destinations across India — from royal Rajasthan to the Himalayan north and the emerald islands of the Andaman."
+        />
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {destinationGroups.map((g, i) => (
+            <motion.div key={g.state} {...fadeUp(i * 0.08)}>
+              <Card className="group relative overflow-hidden rounded-3xl border-border/60 p-0 h-full hover:shadow-luxury transition-all duration-500 hover:-translate-y-2">
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={g.image}
+                    alt={`${g.state} destinations`}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1200ms]"
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${g.accent} mix-blend-multiply opacity-70 group-hover:opacity-60 transition-opacity`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute top-4 left-4 glass rounded-full h-11 w-11 flex items-center justify-center">
+                    <g.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="font-display text-2xl leading-tight">{g.state}</h3>
+                    <p className="text-xs text-white/85 mt-1">{g.tagline}</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3 flex items-center gap-2">
+                    <MapPin className="h-3 w-3 text-accent" /> Popular cities
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {g.cities.map((c) => (
+                      <span
+                        key={c}
+                        className="text-xs px-3 py-1.5 rounded-full bg-secondary border border-border/70 text-foreground/80 hover:bg-accent/15 hover:border-accent/40 hover:text-foreground transition-colors"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                  <ClientDetailsDialog
+                    subject={`${g.state} Tour Inquiry`}
+                    trigger={
+                      <Button variant="outline" className="mt-5 w-full rounded-full group/btn">
+                        Plan {g.state} trip
+                        <ChevronRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Button>
+                    }
+                  />
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- MARQUEE ---------------- */
 function Marquee() {
   const items = ["Jaipur", "Udaipur", "Jodhpur", "Jaisalmer", "Pushkar", "Bikaner", "Mandawa", "Ranthambore", "Mount Abu", "Ajmer"];
