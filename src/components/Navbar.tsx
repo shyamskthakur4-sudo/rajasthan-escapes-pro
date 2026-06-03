@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import logo from "@/assets/almonzo-logo.jpg";
 import { Button } from "@/components/ui/button";
 import { ClientDetailsDialog } from "./ClientDetailsDialog";
+import { PHONE_1, PHONE_2, EMAIL } from "@/lib/data";
 
 const links = [
   { href: "#packages", label: "Packages" },
@@ -38,10 +39,18 @@ export function Navbar() {
               <a key={l.href} href={l.href} className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors story-link">{l.label}</a>
             ))}
           </nav>
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+919352914840" className="flex items-center gap-2 text-sm text-foreground/80 hover:text-accent">
-              <Phone className="h-4 w-4" /> +91 93529 14840
-            </a>
+          <div className="hidden lg:flex items-center gap-4">
+            <div className="flex flex-col items-end text-[11px] leading-tight text-foreground/80">
+              <a href={`tel:${PHONE_1.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-accent">
+                <Phone className="h-3 w-3" /> {PHONE_1}
+              </a>
+              <a href={`tel:${PHONE_2.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-accent">
+                <Phone className="h-3 w-3" /> {PHONE_2}
+              </a>
+              <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-accent">
+                <Mail className="h-3 w-3" /> {EMAIL}
+              </a>
+            </div>
             <ClientDetailsDialog
               subject="Plan My Trip"
               trigger={<Button className="bg-gradient-royal text-primary-foreground shadow-gold rounded-full">Plan My Trip</Button>}

@@ -19,7 +19,7 @@ import { Counter } from "@/components/Counter";
 import { ClientDetailsDialog } from "@/components/ClientDetailsDialog";
 
 import hero from "@/assets/hero-jaipur.jpg";
-import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, MAPS_URL } from "@/lib/data";
+import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, MAPS_URL, kashmirImg } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -158,9 +158,17 @@ const destinationGroups = [
     state: "Kashmir",
     tagline: "Paradise of meadows, lakes & snow",
     icon: Snowflake,
-    image: "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?q=80&w=1200&auto=format&fit=crop",
+    image: kashmirImg,
     cities: ["Srinagar", "Gulmarg", "Sonmarg", "Pahalgam"],
     accent: "from-sky-500/80 to-indigo-700/80",
+  },
+  {
+    state: "Himachal Pradesh",
+    tagline: "Pine valleys, snowy passes & riverside towns",
+    icon: Mountain,
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+    cities: ["Kullu", "Manali", "Kasol", "Shimla"],
+    accent: "from-emerald-600/80 to-slate-700/80",
   },
   {
     state: "Andaman & Nicobar",

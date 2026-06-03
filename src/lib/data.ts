@@ -10,8 +10,15 @@ import heritage from "@/assets/heritage-stay.jpg";
 import sedan from "@/assets/cab-sedan.jpg";
 import tempo from "@/assets/cab-tempo.jpg";
 import innovaCar from "@/assets/cab-luxury.jpg";
+import kashmirAsset from "@/assets/kashmir.webp.asset.json";
+import jaipurHawaAsset from "@/assets/jaipur-hawamahal.jpg.asset.json";
+import khatuShyamAsset from "@/assets/khatu-shyam.jpg.asset.json";
 
-export const WHATSAPP = "918955470097";
+export const kashmirImg = kashmirAsset.url;
+export const jaipurHawaImg = jaipurHawaAsset.url;
+export const khatuShyamImg = khatuShyamAsset.url;
+
+export const WHATSAPP = "919352914840";
 export const PHONE_1 = "+91 93529 14840";
 export const PHONE_2 = "+91 89554 70097";
 export const EMAIL = "almonzotourism@gmail.com";
@@ -143,7 +150,7 @@ export const packages = [
     duration: "2 Nights / 3 Days",
     tagline: "Spiritual circuit",
     price: "From ₹8,500",
-    image: udaipurImg,
+    image: khatuShyamImg,
     highlights: ["Khatu Shyam Ji darshan", "Salasar Balaji", "Rani Sati Temple"],
     days: ["Devotional Rajasthan pilgrimage with comfort stays."],
   },
@@ -188,7 +195,7 @@ export const packages = [
     duration: "3 Nights / 4 Days",
     tagline: "Pink City + Holy circuit",
     price: "From ₹17,500",
-    image: udaipurImg,
+    image: jaipurHawaImg,
     highlights: ["Jaigarh Fort cannon", "Ajmer Sharif Dargah", "Brahma Temple at Pushkar"],
     days: [
       "Day 01 — Arrival in Jaipur: Pickup from Jaipur Airport / Railway Station and transfer to the hotel. Relax and later visit Albert Hall Museum and Birla Temple. In the evening choose between Chokhi Dhani — India's only village resort — or a Sound & Light Show. Overnight at the hotel.",
@@ -261,7 +268,7 @@ export const packages = [
     duration: "6 Nights / 7 Days",
     tagline: "Srinagar · Sonamarg · Gulmarg · Pahalgam",
     price: "From ₹17,500 per person",
-    image: udaipurImg,
+    image: kashmirImg,
     highlights: ["Shikara ride on Dal Lake", "Gondola at Gulmarg", "Houseboat night in Srinagar"],
     days: [
       "Day 01 — Arrive Srinagar: Pickup from Srinagar Railway Station and transfer to the hotel. Local sightseeing in Srinagar including the famed Mughal Gardens and Dal Lake area. Overnight stay at New Mamta, Srinagar.",
@@ -271,6 +278,58 @@ export const packages = [
       "Day 05 — Srinagar → Pahalgam: After breakfast drive to Pahalgam with sightseeing on the way (saffron fields of Pampore, Avantipura ruins and Anantnag). On arrival, check in. Overnight stay at Pahalgam.",
       "Day 06 — Pahalgam Sightseeing → Srinagar: Enjoy Pahalgam sightseeing including Aru Valley, Betaab Valley and Chandanwari (at additional cost). Return to Srinagar in the evening and check in to a deluxe houseboat. Overnight stay on a Houseboat.",
       "Day 07 — Departure: After breakfast, enjoy a Shikara ride on Dal Lake before transfer to Srinagar Airport for your onward journey. Tour ends.",
+    ],
+  },
+  {
+    id: "andaman-hera",
+    title: "Andaman Hera Package",
+    duration: "5 Nights / 6 Days",
+    tagline: "Port Blair · Havelock · Neil Island",
+    price: "From ₹42,000 / person",
+    image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
+    highlights: ["3★ hotel stays", "Breakfast & dinner included", "50 photos by photographer"],
+    days: [
+      "Day 01 — Arrive Port Blair: Airport pickup and transfer to hotel. Evening local sightseeing and Light & Sound show at Cellular Jail. Overnight in Port Blair.",
+      "Day 02 — Port Blair → Havelock Island: Morning ferry to Havelock. Check in and visit Radhanagar Beach (Asia's #1 beach) at sunset. Overnight in Havelock.",
+      "Day 03 — Havelock — Elephant & Kalapathar Beach: Full-day excursion to Elephant Beach for snorkelling and water sports, followed by Kalapathar Beach. Overnight in Havelock.",
+      "Day 04 — Havelock → Neil Island: Ferry to Neil. Visit Bharatpur Beach, Laxmanpur Beach and Natural Bridge. Overnight in Neil Island.",
+      "Day 05 — Neil Island → Port Blair: Morning ferry back to Port Blair. Visit Corbyn's Cove Beach and local markets. Overnight in Port Blair.",
+      "Day 06 — Departure: After breakfast, airport drop for your onward flight. Includes: 3★ / budget hotel, breakfast & dinner, all transfers, local sightseeing and 50 photos shot by a photographer.",
+    ],
+  },
+  {
+    id: "andaman-scuba",
+    title: "Andaman Scuba Adventure",
+    duration: "5 Nights / 6 Days",
+    tagline: "Port Blair · Havelock",
+    price: "From ₹45,000 / person",
+    image: "https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=1200&q=80",
+    highlights: ["Scuba in Havelock", "3 nights on Havelock", "50 photos by photographer"],
+    days: [
+      "Day 01 — Arrive Port Blair: Airport pickup, hotel check-in. Evening at Cellular Jail with Light & Sound Show. Overnight in Port Blair.",
+      "Day 02 — Port Blair → Havelock Island: Ferry to Havelock and check in. Evening at Radhanagar Beach for sunset. Overnight in Havelock.",
+      "Day 03 — Havelock — Scuba Diving at Elephant Beach: Full-day excursion to Elephant Beach for scuba diving (introductory dive included as per operator) and snorkelling. Overnight in Havelock.",
+      "Day 04 — Havelock — Kalapathar & Leisure: Morning at Kalapathar Beach, afternoon free for optional sea-walking or jet-ski activities. Overnight in Havelock.",
+      "Day 05 — Havelock → Port Blair: Ferry back to Port Blair. Visit Chidiya Tapu for sunset. Overnight in Port Blair.",
+      "Day 06 — Departure: After breakfast, transfer to Port Blair airport. Includes: 3★ / budget hotel, breakfast & dinner, all transfers, local sightseeing and 50 photos shot by a photographer.",
+    ],
+  },
+  {
+    id: "andaman-honeymoon",
+    title: "Andaman Couple's Choice (Honeymoon)",
+    duration: "6 Nights / 7 Days",
+    tagline: "Port Blair · Havelock · Neil Island",
+    price: "From ₹60,000 / person",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    highlights: ["Candle-light dinners", "Private beach time", "50 photos by photographer"],
+    days: [
+      "Day 01 — Arrive Port Blair: Romantic welcome at the airport and transfer to hotel. Evening at Corbyn's Cove Beach. Candle-light dinner. Overnight in Port Blair.",
+      "Day 02 — Port Blair → Havelock Island: Ferry to Havelock. Check in and unwind at Radhanagar Beach for sunset. Candle-light dinner. Overnight in Havelock.",
+      "Day 03 — Havelock — Elephant Beach: Full-day excursion to Elephant Beach for snorkelling and water sports. Candle-light dinner. Overnight in Havelock.",
+      "Day 04 — Havelock → Neil Island: Ferry to Neil Island. Visit Natural Bridge, Laxmanpur Beach and Bharatpur Beach. Candle-light dinner. Overnight in Neil Island.",
+      "Day 05 — Neil Island — Leisure: Day at leisure for couples — beach walks, optional kayaking or glass-bottom boat ride. Candle-light dinner. Overnight in Neil Island.",
+      "Day 06 — Neil Island → Port Blair: Ferry back to Port Blair. Visit Ross Island and North Bay for coral viewing. Candle-light dinner. Overnight in Port Blair.",
+      "Day 07 — Departure: After breakfast, airport drop. Includes: 3★ / budget hotel, breakfast & candle-light dinners, all transfers, local sightseeing and 50 photos shot by a photographer.",
     ],
   },
 ];
