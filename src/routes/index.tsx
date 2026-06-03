@@ -158,7 +158,7 @@ const destinationGroups = [
     state: "Kashmir",
     tagline: "Paradise of meadows, lakes & snow",
     icon: Snowflake,
-    image: "https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?q=80&w=1200&auto=format&fit=crop",
+    image: kashmirImg,
     cities: ["Srinagar", "Gulmarg", "Sonmarg", "Pahalgam"],
     accent: "from-sky-500/80 to-indigo-700/80",
   },
