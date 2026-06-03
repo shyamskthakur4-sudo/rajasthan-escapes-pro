@@ -10,8 +10,15 @@ import heritage from "@/assets/heritage-stay.jpg";
 import sedan from "@/assets/cab-sedan.jpg";
 import tempo from "@/assets/cab-tempo.jpg";
 import innovaCar from "@/assets/cab-luxury.jpg";
+import kashmirAsset from "@/assets/kashmir.webp.asset.json";
+import jaipurHawaAsset from "@/assets/jaipur-hawamahal.jpg.asset.json";
+import khatuShyamAsset from "@/assets/khatu-shyam.jpg.asset.json";
 
-export const WHATSAPP = "918955470097";
+export const kashmirImg = kashmirAsset.url;
+export const jaipurHawaImg = jaipurHawaAsset.url;
+export const khatuShyamImg = khatuShyamAsset.url;
+
+export const WHATSAPP = "919352914840";
 export const PHONE_1 = "+91 93529 14840";
 export const PHONE_2 = "+91 89554 70097";
 export const EMAIL = "almonzotourism@gmail.com";
