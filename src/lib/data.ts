@@ -150,7 +150,7 @@ export const packages = [
     duration: "2 Nights / 3 Days",
     tagline: "Spiritual circuit",
     price: "From ₹8,500",
-    image: udaipurImg,
+    image: khatuShyamImg,
     highlights: ["Khatu Shyam Ji darshan", "Salasar Balaji", "Rani Sati Temple"],
     days: ["Devotional Rajasthan pilgrimage with comfort stays."],
   },
@@ -195,7 +195,7 @@ export const packages = [
     duration: "3 Nights / 4 Days",
     tagline: "Pink City + Holy circuit",
     price: "From ₹17,500",
-    image: udaipurImg,
+    image: jaipurHawaImg,
     highlights: ["Jaigarh Fort cannon", "Ajmer Sharif Dargah", "Brahma Temple at Pushkar"],
     days: [
       "Day 01 — Arrival in Jaipur: Pickup from Jaipur Airport / Railway Station and transfer to the hotel. Relax and later visit Albert Hall Museum and Birla Temple. In the evening choose between Chokhi Dhani — India's only village resort — or a Sound & Light Show. Overnight at the hotel.",
@@ -268,7 +268,7 @@ export const packages = [
     duration: "6 Nights / 7 Days",
     tagline: "Srinagar · Sonamarg · Gulmarg · Pahalgam",
     price: "From ₹17,500 per person",
-    image: udaipurImg,
+    image: kashmirImg,
     highlights: ["Shikara ride on Dal Lake", "Gondola at Gulmarg", "Houseboat night in Srinagar"],
     days: [
       "Day 01 — Arrive Srinagar: Pickup from Srinagar Railway Station and transfer to the hotel. Local sightseeing in Srinagar including the famed Mughal Gardens and Dal Lake area. Overnight stay at New Mamta, Srinagar.",
