@@ -19,7 +19,7 @@ import { Counter } from "@/components/Counter";
 import { ClientDetailsDialog } from "@/components/ClientDetailsDialog";
 
 import hero from "@/assets/hero-jaipur.jpg";
-import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, MAPS_URL } from "@/lib/data";
+import { packages, hotels, cabs, WHATSAPP, INSTAGRAM, PHONE_1, PHONE_2, EMAIL, MAPS_URL, kashmirImg } from "@/lib/data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
